@@ -1,0 +1,210 @@
+{
+  "summary": {
+    "health_score": 8,
+    "business_type": "E-commerce — Lab Grown Diamond Rings (A.N. JAIN subdomain)",
+    "audit_date": "2026-06-30",
+    "domain": "rings.anjain.in",
+    "parent_domain": "anjain.in",
+    "platform": "AWS EC2 (98.84.224.111) — separate from main Squarespace site",
+    "google_indexed_pages": 0,
+    "top_findings": [
+      "Zero Google indexation — subdomain has never been crawled or indexed",
+      "Subdomain architecture splits already-minimal domain authority from anjain.in",
+      "Platform fragmentation: main site on Squarespace, rings subdomain on AWS EC2",
+      "No schema markup confirmed",
+      "No AI search footprint (GEO score: 0)"
+    ],
+    "quick_wins": [
+      "Submit rings.anjain.in to Google Search Console immediately",
+      "Add canonical tag on subdomain pointing to authoritative URL",
+      "Create robots.txt explicitly allowing Googlebot and major AI crawlers",
+      "Add /llms.txt for AI crawler discovery",
+      "Consider migrating to anjain.in/rings/ subfolder to consolidate authority"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 22,
+      "what_works": [
+        "DNS resolves correctly"
+      ],
+      "findings": [
+        {
+          "title": "Zero Google Indexation",
+          "severity": "Critical",
+          "description": "site:rings.anjain.in returns zero results. The subdomain has never been crawled or indexed by Google.",
+          "recommendation": "Verify robots.txt allows Googlebot; create and submit XML sitemap to GSC; check for noindex meta tags; ensure page is publicly accessible"
+        },
+        {
+          "title": "Subdomain vs Subfolder Architecture",
+          "severity": "Critical",
+          "description": "Using rings.anjain.in (subdomain) instead of anjain.in/rings/ splits domain authority. Google treats subdomains as separate sites. With near-zero backlink profile on anjain.in, fragmenting authority is especially harmful.",
+          "recommendation": "Strongly consider migrating to www.anjain.in/rings/ or www.anjain.in/shop/rings/. If subdomain must stay, implement cross-domain canonical strategy and ensure bidirectional internal linking between domains."
+        },
+        {
+          "title": "Platform Fragmentation",
+          "severity": "High",
+          "description": "Main site on Squarespace (198.49.23.144), rings subdomain on AWS EC2 (98.84.224.111). Two separate hosting environments require separate GSC properties, sitemaps, and analytics configuration.",
+          "recommendation": "Register rings.anjain.in as a separate GSC property. Configure unified GA4 measurement. Add sitemap reference in robots.txt."
+        },
+        {
+          "title": "Canonical Tags Not Verified",
+          "severity": "High",
+          "description": "Could not verify canonical tag implementation. Without explicit canonicals, Google may deindex the subdomain or split signals with main domain ring pages.",
+          "recommendation": "Add self-referencing canonical on all subdomain pages: <link rel='canonical' href='https://rings.anjain.in/[page]'>"
+        },
+        {
+          "title": "HTTPS / Security Headers Unknown",
+          "severity": "Medium",
+          "description": "Could not verify TLS configuration, HSTS, CSP, or X-Frame-Options headers due to network access restriction.",
+          "recommendation": "Verify SSL certificate is valid; add HSTS header; configure CSP and X-Content-Type-Options"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "No Indexable Content Confirmed",
+          "severity": "Critical",
+          "description": "No pages from this subdomain appear in Google's index. Content quality, E-E-A-T, and thin content cannot be assessed.",
+          "recommendation": "Ensure page is publicly accessible; add substantive keyword-targeted content (minimum 300 words); include founder credentials and sustainability angle"
+        },
+        {
+          "title": "E-E-A-T Signals Not Inherited",
+          "severity": "High",
+          "description": "Founder bios, brand story, and blog content on anjain.in do not flow to this subdomain. Must establish E-E-A-T independently.",
+          "recommendation": "Include author entity markup, gemologist credentials, IGI certification information, and brand trust signals"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "Title, Meta, Headings — Unverifiable",
+          "severity": "Critical",
+          "description": "Could not access page to verify title tag, meta description, H1, or heading structure.",
+          "recommendation": "Target title: 'Lab Grown Diamond Rings India | 14K Recycled Gold | A.N. JAIN'. Meta desc: 250 chars covering lab grown, recycled gold, sustainable, price range, brand name."
+        },
+        {
+          "title": "Internal Linking to Main Site",
+          "severity": "High",
+          "description": "Subdomain must link back to www.anjain.in to signal brand relationship and help users navigate to full shop.",
+          "recommendation": "Add prominent navigation link to www.anjain.in; add breadcrumb: anjain.in > Rings"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "No Schema Confirmed",
+          "severity": "Critical",
+          "description": "No structured data detected (page not accessible for analysis). Missing Organization, Product/ItemList, BreadcrumbList, and WebPage schema.",
+          "recommendation": "Add Organization schema with sameAs to main domain and Instagram; add ItemList or Product schema for ring listings; add BreadcrumbList"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "Core Web Vitals — No Field Data",
+          "severity": "High",
+          "description": "No CrUX data available (zero traffic, zero indexation). Lab data also unavailable due to network access restriction. AWS EC2 hosting with no CDN configuration assumed — could be slow without CloudFront.",
+          "recommendation": "After launch: run PageSpeed Insights; target LCP < 2.5s, INP < 200ms, CLS < 0.1. Add CloudFront CDN if not already configured."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "Zero AI Citation Footprint",
+          "severity": "Critical",
+          "description": "Unindexed subdomain cannot appear in Google AI Overviews, ChatGPT Search, or Perplexity. No brand mention signals from this URL.",
+          "recommendation": "After indexation: add /llms.txt; ensure AI crawlers allowed in robots.txt; add structured brand signals and citability markers"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 0,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "Image Optimization — Unverifiable",
+          "severity": "Medium",
+          "description": "Could not audit images on the subdomain. For a jewellery page, high-quality product images with descriptive alt text are essential.",
+          "recommendation": "Ensure all ring images have alt text: 'Samantha Ring lab grown diamond 14K recycled gold'. Use WebP/AVIF format. Explicitly set width and height attributes to prevent CLS."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Make the Page Visible to Google",
+        "timeframe": "Today (Week 1)",
+        "items": [
+          "Verify the page is publicly accessible (no password, no noindex)",
+          "Create robots.txt at rings.anjain.in/robots.txt allowing all crawlers",
+          "Add /llms.txt for AI crawler discovery",
+          "Submit rings.anjain.in as a new property in Google Search Console",
+          "Submit XML sitemap to GSC",
+          "Add self-referencing canonical tags",
+          "Add bidirectional links between rings.anjain.in and www.anjain.in"
+        ]
+      },
+      {
+        "name": "Phase 2: Authority & Architecture Decision",
+        "timeframe": "Week 1–2",
+        "items": [
+          "STRATEGIC DECISION: Migrate to www.anjain.in/rings/ subfolder vs keep subdomain",
+          "If keeping subdomain: establish cross-domain canonical and link equity strategy",
+          "If migrating: set up 301 redirects from rings.anjain.in/* to www.anjain.in/rings/*",
+          "Register GA4 data stream for subdomain if keeping"
+        ]
+      },
+      {
+        "name": "Phase 3: On-Page SEO & Schema",
+        "timeframe": "Weeks 2–3",
+        "items": [
+          "Optimize title tag: 'Lab Grown Diamond Rings | 14K Recycled Gold | A.N. JAIN'",
+          "Write meta description targeting 'lab grown diamond rings india' (155 chars)",
+          "Add H1 with primary keyword, H2s for ring categories/features",
+          "Inject Organization + ItemList/Product JSON-LD schema",
+          "Add BreadcrumbList schema",
+          "Optimize all product images: descriptive alt text, WebP, explicit dimensions"
+        ]
+      },
+      {
+        "name": "Phase 4: Performance & Monitoring",
+        "timeframe": "Ongoing",
+        "items": [
+          "Run PageSpeed Insights once page is live",
+          "Configure CloudFront CDN if AWS EC2 serving raw",
+          "Monitor GSC for first indexation (target: within 7–14 days of submission)",
+          "Set up GA4 organic traffic tracking",
+          "Monitor Core Web Vitals in GSC after first 28-day data window"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
