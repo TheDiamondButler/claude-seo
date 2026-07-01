@@ -1,0 +1,308 @@
+{
+  "summary": {
+    "health_score": 38,
+    "business_type": "E-commerce — Lab Grown Diamond Jewellery",
+    "audit_date": "2026-06-30",
+    "domain": "anjain.in",
+    "platform": "Squarespace",
+    "brand": "A.N. JAIN",
+    "founders": "Atishay Jain & Nishaant Jain",
+    "google_indexed_pages": 9,
+    "top_findings": [
+      "Broken product URL slug: Four Leaf Clover Pendant served at /store-2/p/milk-dip-cup-92wf6-3epst",
+      "Duplicate /store-2/ store path contaminating index with non-jewellery products (e.g. planter)",
+      "Blog content stale since February 2023 — 16+ months without new posts",
+      "Zero brand visibility in 'Top 10 Lab Grown Diamond Brands India 2026' listicles",
+      "Product schema incomplete: missing aggregateRating, material, gemstone properties",
+      "Social proof critically low: ~1,074 Instagram followers vs competitors with 50k–500k"
+    ],
+    "quick_wins": [
+      "Fix Four Leaf Clover Pendant URL slug in Squarespace → redirect old URL",
+      "Delete or noindex all /store-2/ pages",
+      "Confirm non-www to www 301 redirect is active",
+      "Create /llms.txt for AI crawler discovery",
+      "Inject custom Product JSON-LD schema via Squarespace code injection"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 42,
+      "what_works": [
+        "DNS resolves correctly on both www and non-www",
+        "AI crawlers NOT blocked (Squarespace crawler settings verified — both boxes unchecked)",
+        "Squarespace auto-generates XML sitemap at /sitemap.xml",
+        "HTTPS active"
+      ],
+      "findings": [
+        {
+          "title": "Broken Product URL Slug",
+          "severity": "Critical",
+          "description": "Four Leaf Clover Pendant is indexed at /store-2/p/milk-dip-cup-92wf6-3epst. The slug 'milk-dip-cup-92wf6-3epst' has zero semantic relationship to the product. Google uses URL slugs as a strong keyword relevance signal. This page cannot rank for any jewellery-related query.",
+          "recommendation": "Rename the product URL in Squarespace to /shop/p/four-leaf-clover-pendant. Set up a permanent 301 redirect from the old /store-2/ URL to the new URL immediately."
+        },
+        {
+          "title": "Duplicate /store-2/ Store Path Contaminating Index",
+          "severity": "Critical",
+          "description": "Two products appear at /store-2/p/ path, including an 'Earth & Sky Planter' — a physical planter, not jewellery. Google is indexing these pages, diluting crawl budget and creating topical confusion for a diamond jewellery brand.",
+          "recommendation": "Delete legacy /store-2/ products entirely from Squarespace. If they must stay, add <meta name='robots' content='noindex'> to all /store-2/ pages via Squarespace per-page SEO settings."
+        },
+        {
+          "title": "Non-www → www Redirect Not Verified",
+          "severity": "Critical",
+          "description": "User entered anjain.in (non-www) but all indexed pages resolve to www.anjain.in. Without a confirmed 301 redirect, Google may treat these as separate domains, splitting link equity and potentially causing duplicate indexation.",
+          "recommendation": "Test curl -I https://anjain.in and confirm HTTP 301 redirects to https://www.anjain.in. If not, configure in Squarespace Domains settings."
+        },
+        {
+          "title": "Only 9 Pages Indexed",
+          "severity": "High",
+          "description": "site:anjain.in shows only ~9 pages in Google's index. For an e-commerce jewellery store with multiple product categories and a blog, this is severely under-indexed. Google may not be discovering all product pages.",
+          "recommendation": "Verify XML sitemap is submitted in GSC and lists all product and blog pages. Check for orphan pages (no internal links pointing to them). Use GSC URL Inspection to identify indexation issues."
+        },
+        {
+          "title": "No Google Search Console Confirmed",
+          "severity": "High",
+          "description": "No GSC credentials configured. Without GSC, there is no visibility into crawl errors, indexation status, keyword impressions, or Core Web Vitals field data.",
+          "recommendation": "Set up GSC: verify domain ownership via DNS TXT record. Submit sitemap. Connect to Analytics 4."
+        },
+        {
+          "title": "Security Headers Unknown",
+          "severity": "Medium",
+          "description": "Could not verify HSTS, Content-Security-Policy, X-Frame-Options, or X-Content-Type-Options headers due to network access restriction. Squarespace provides basic security but custom headers may be missing.",
+          "recommendation": "Verify security headers via securityheaders.com. Squarespace does not support custom header injection without a Business plan or higher."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 38,
+      "what_works": [
+        "Founder-authored blog establishes personal E-E-A-T (Atishay Jain, Nishaant Jain)",
+        "/ourstory page exists — brand narrative and sustainability angle present",
+        "Lab grown diamond + recycled gold positioning is a genuine differentiator",
+        "Named product pieces (Mia, Harmony, Cleopatra, Chakra, Samantha) suggest attention to product storytelling"
+      ],
+      "findings": [
+        {
+          "title": "Blog Stale Since February 2023",
+          "severity": "High",
+          "description": "Last blog post dated February 2023 — 16+ months of no content updates. Google's QRG explicitly rewards sites that demonstrate ongoing expertise and freshness. Stale content signals reduced editorial investment to both Google and prospective buyers.",
+          "recommendation": "Restart blog with minimum 3 posts/month. Priority topics: 'lab grown diamonds vs natural diamonds india', '14K recycled gold jewellery explained', 'CVD vs HPHT diamonds', 'how to buy lab grown diamond rings in India'. Target long-tail informational queries."
+        },
+        {
+          "title": "Zero Brand Visibility in Category Listicles",
+          "severity": "High",
+          "description": "Multiple 'Top 10 Lab Grown Diamond Brands India 2026' articles rank on page 1 of Google. A.N. JAIN appears in none of them. These listicles drive high-intent brand discovery traffic and represent the most efficient external editorial E-E-A-T signal.",
+          "recommendation": "Identify the 8 top-ranking 'best lab grown diamond' articles. Contact each author with brand story, founder expertise, sustainability angle (lab grown + recycled gold), and product images. Aim for 3+ editorial mentions within 60 days."
+        },
+        {
+          "title": "Product Descriptions Likely Thin",
+          "severity": "Medium",
+          "description": "Named products (Mia, Harmony, Cleopatra, Chakra) suggest branded descriptions exist, but Squarespace product pages typically have limited word count. E-commerce product pages need substantive descriptions to compete for long-tail keywords.",
+          "recommendation": "Each product page should have: 150+ words of unique description, diamond specifications (color grade, clarity, carat), gold details (14K, recycled, BIS hallmark), care instructions, and sizing guidance."
+        },
+        {
+          "title": "E-E-A-T Signals on Product Pages Not Confirmed",
+          "severity": "Medium",
+          "description": "For high-consideration purchases like diamond jewellery, Google's QRG places heavy weight on E-E-A-T signals: expertise indicators, certification mentions, author attribution, and trust markers.",
+          "recommendation": "Add to each product page: IGI/BIS certification badge, gemstone grading specifics (E-H colour, VVS-VS clarity), and a founder trust statement. Add reviews widget (Trustpilot or Google Reviews embed)."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 40,
+      "what_works": [
+        "Product pages have individual URLs (not pagination-based)",
+        "Named product slugs (/shop/p/samantha, /shop/p/mia) are mostly clean",
+        "Brand name 'A.N. JAIN' consistent in page titles"
+      ],
+      "findings": [
+        {
+          "title": "Title and Meta Description Quality Not Verified",
+          "severity": "High",
+          "description": "Could not directly inspect page titles and meta descriptions. Squarespace auto-generates these from product names and descriptions, which often produces generic, non-keyword-optimised titles.",
+          "recommendation": "Audit titles via GSC or Screaming Frog. Optimal pattern: '[Product Name] | Lab Grown Diamond [Type] | A.N. JAIN'. Homepage title should target 'lab grown diamond jewellery india'. All meta descriptions should be under 155 chars with primary keyword in first 20 words."
+        },
+        {
+          "title": "Internal Linking Between Blog and Products",
+          "severity": "Medium",
+          "description": "Blog articles (if they exist on target keywords) should link to relevant product pages to pass topical authority. This is a standard e-commerce SEO practice that Squarespace blogs typically don't automate.",
+          "recommendation": "Add 2–3 contextual internal links per blog post to relevant product pages. Example: blog post on 'CVD diamonds' links to specific ring or pendant products."
+        },
+        {
+          "title": "Heading Structure Unknown",
+          "severity": "Medium",
+          "description": "Could not verify H1/H2/H3 structure on product or category pages. Squarespace themes sometimes place product names in H1 but skip semantic heading hierarchy on category/collection pages.",
+          "recommendation": "Verify each page has exactly one H1 (the product/category name with primary keyword). H2s should cover key attributes: material, gemstone specifications, certification, care."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 28,
+      "what_works": [
+        "Squarespace auto-generates basic Product schema on shop pages",
+        "Basic Organization schema likely present via Squarespace"
+      ],
+      "findings": [
+        {
+          "title": "Product Schema Incomplete",
+          "severity": "Critical",
+          "description": "Squarespace's auto-generated Product schema typically omits: aggregateRating, material, gemstone properties (color, clarity, cut, carat), brand entity, offers.availability, and itemCondition. For Google Shopping eligibility and rich results, these fields are required.",
+          "recommendation": "Inject custom JSON-LD via Squarespace code injection (Settings → Advanced → Code Injection → Footer). Add: aggregateRating (once reviews collected), material ('14K Recycled Gold'), gemstone color/clarity/cut, brand (A.N. JAIN entity), availability (InStock or MadeToOrder)."
+        },
+        {
+          "title": "No AggregateRating Schema",
+          "severity": "High",
+          "description": "No customer review data in schema markup means no star ratings in search results. Star ratings increase click-through rates by 15–30% for product pages.",
+          "recommendation": "Integrate a reviews platform (Trustpilot, Stamped.io, or Google Reviews). Once reviews are collected, inject AggregateRating schema referencing live review data."
+        },
+        {
+          "title": "No BreadcrumbList Schema",
+          "severity": "Medium",
+          "description": "Breadcrumb structured data helps Google understand site hierarchy and enables breadcrumb rich results in SERPs. Squarespace does not auto-generate BreadcrumbList schema.",
+          "recommendation": "Add BreadcrumbList JSON-LD: Home > Shop > Pendants/Rings > [Product Name]."
+        },
+        {
+          "title": "FAQPage Schema — Informational Only",
+          "severity": "Info",
+          "description": "Google retired FAQ rich results for all sites on May 7, 2026. FAQPage schema no longer produces SERP features. It still has value for AI/LLM citations but should not be built for Google SERP benefit.",
+          "recommendation": "If adding FAQ content to product pages, use QAPage schema for genuine Q&A. Do not invest in FAQPage for Google SERP benefit."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 45,
+      "what_works": [
+        "Squarespace provides CDN by default",
+        "HTTPS active (minimal overhead)"
+      ],
+      "findings": [
+        {
+          "title": "Core Web Vitals — No Field Data Available",
+          "severity": "High",
+          "description": "No CrUX data available (requires Google API key + sufficient traffic). Squarespace jewellery sites with high-resolution product photography historically score Needs Improvement or Poor on LCP. Expected lab estimates: LCP 3–5s, INP moderate, CLS low-medium.",
+          "recommendation": "Connect Google API key (run /seo google setup) to get real CrUX field data. In the meantime, run PageSpeed Insights manually at pagespeed.web.dev. Target: LCP < 2.5s, INP < 200ms, CLS < 0.1."
+        },
+        {
+          "title": "High-Resolution Product Images Likely Unoptimised",
+          "severity": "Medium",
+          "description": "Jewellery product photography is typically 3–8MB raw. Squarespace resizes images but does not always serve WebP or apply aggressive compression. Large images are the leading cause of poor LCP on Squarespace.",
+          "recommendation": "Upload images at maximum 2000px wide and pre-compressed to under 500KB. Use WebP format. Squarespace will serve responsive variants, but starting with optimised source images reduces LCP significantly."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 25,
+      "what_works": [
+        "AI crawlers NOT blocked (confirmed via Squarespace crawler settings screenshot — both boxes unchecked)",
+        "Founder-authored content provides citability signals"
+      ],
+      "findings": [
+        {
+          "title": "Zero AI Overview Citations",
+          "severity": "High",
+          "description": "A.N. JAIN does not appear in Google AI Overviews, ChatGPT Search, or Perplexity results for 'lab grown diamond jewellery india' or related queries. Despite AI crawlers being allowed, the site lacks content depth and brand authority for AI systems to cite it.",
+          "recommendation": "Publish 3+ long-form educational articles (1500+ words) on lab grown diamond topics. Add structured passage-level content (clear H2 sections, concise answers to specific questions) to improve citability."
+        },
+        {
+          "title": "No llms.txt File",
+          "severity": "Medium",
+          "description": "No /llms.txt file present to guide AI crawlers on brand, key pages, and content structure. While not yet a ranking factor, llms.txt is emerging best practice for AI search visibility in 2026.",
+          "recommendation": "Create /llms.txt at www.anjain.in/llms.txt with brand description, key pages, and structured content inventory."
+        },
+        {
+          "title": "Brand Mention Signals Insufficient",
+          "severity": "Medium",
+          "description": "AI systems cite brands they have seen referenced across multiple authoritative sources. A.N. JAIN has minimal third-party mentions (estimated <5 editorial references).",
+          "recommendation": "Prioritise PR outreach to jewellery/sustainability publications. Even 3–5 editorial mentions in domain-relevant publications significantly improves AI citation probability."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 35,
+      "what_works": [
+        "Product images appear to exist (products are listed in search results)",
+        "Squarespace serves responsive image variants automatically"
+      ],
+      "findings": [
+        {
+          "title": "Alt Text Not Verified",
+          "severity": "High",
+          "description": "Could not audit alt text on product images. Squarespace uses product names as alt text by default, which is often generic ('Mia' rather than 'Mia pendant lab grown diamond 14K recycled gold').",
+          "recommendation": "Override default alt text for all product images with descriptive, keyword-rich alternatives. Format: '[Product Name] [product type] lab grown diamond 14K recycled gold India'. This improves both image search rankings and accessibility."
+        },
+        {
+          "title": "Open Graph Images Per Product Not Confirmed",
+          "severity": "Medium",
+          "description": "For a jewellery brand where Instagram and Pinterest are primary discovery channels, custom OG images on every product page are critical for social sharing CTR. Squarespace may generate generic OG images.",
+          "recommendation": "Upload a custom OG image (1200x630px) for each product page in Squarespace's per-page SEO settings. Use high-contrast product photography on a white or brand-coloured background."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Fix Four Leaf Clover Pendant URL slug → rename + 301 redirect from old URL",
+          "Delete or noindex all /store-2/ pages (planter and legacy products)",
+          "Verify non-www to www 301 redirect is active",
+          "Set up Google Search Console + submit sitemap",
+          "Create /llms.txt at www.anjain.in/llms.txt"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2–3",
+        "items": [
+          "Inject custom Product JSON-LD schema via Squarespace code injection (add material, gemstone, brand, availability, aggregateRating placeholder)",
+          "Relaunch blog with 3 cornerstone posts: lab grown vs natural, recycled gold, CVD vs HPHT",
+          "Optimise all product page titles: [Name] | Lab Grown Diamond [Type] | A.N. JAIN",
+          "Audit and fix image alt text on all product images",
+          "Set up Google Analytics 4 + link to GSC"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Pitch A.N. JAIN to 8 top-ranking 'Best Lab Grown Diamond Brands India' articles",
+          "Expand blog to 12+ articles (3/month cadence) targeting informational keywords",
+          "Integrate reviews platform (Trustpilot or Stamped.io); collect post-purchase reviews",
+          "Add AggregateRating schema once 5+ reviews collected",
+          "Instagram growth campaign: 4 posts/week (product, behind-scenes, education, reels)"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Weekly GSC check: indexation, keyword impressions, Core Web Vitals",
+          "Monthly: check brand mentions in 'Top 10' listicles",
+          "Quarterly: re-run full SEO audit to track health score improvement",
+          "Set drift baseline: /seo drift baseline https://www.anjain.in",
+          "Track leading indicators: indexed pages, referring domains, Instagram followers"
+        ]
+      }
+    ]
+  },
+  "competitors": [
+    {"name": "Ayaani", "strength": "769% referring domain growth via content + PR"},
+    {"name": "Emori", "strength": "Shark Tank India visibility; IGI certification prominently featured"},
+    {"name": "VARNIYA", "strength": "Strong local SEO for Delhi; city-specific landing pages"},
+    {"name": "GIVA / CaratLane", "strength": "Category authority via high-volume blog content"},
+    {"name": "House of Quadri", "strength": "IGI certification as trust signal on every product page"}
+  ],
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "charts_dir": "charts/"
+  }
+}
